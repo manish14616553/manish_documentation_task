@@ -1,0 +1,32 @@
+@startuml
+
+rectangle "ISRO Quiz.mygov.in" as I #Blue
+rectangle "Public IP" as IP #LightBlue
+rectangle "NIC LB" as NIC #Yellow
+rectangle "Varnish \n Nginx \n [IP10.249.82.170]" as NG #LightPink
+rectangle "Varnish \n Nginx \n [IP10.249.82.171]" as NG1 #LightPink
+rectangle "Varnish \n Nginx \n [IP10.249.82.172]" as NG2 #LightPink
+rectangle "Varnish \n Nginx \n [IP10.249.82.173]" as NG3 #LightPink
+rectangle "Varnish \n Nginx \n [IP10.249.82.174]" as NG4 #LightPink
+rectangle " " as P #Black
+rectangle " " as 1 #Black
+rectangle " " as 2 #Black
+rectangle " " as 3 #Black
+rectangle " " as 4 #Black
+rectangle " " as 5 #Black
+
+I-down-IP
+IP-down-NIC
+NIC-down-P
+P-left-1
+1-left-2
+P-right-3
+3-right-4
+4-right-5
+1-down-NG
+2-down-NG1
+3-down-NG2
+4-down-NG3
+5-down-NG4
+
+@enduml

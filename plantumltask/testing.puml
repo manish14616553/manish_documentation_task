@@ -1,0 +1,32 @@
+@startuml
+!include <archimate/Archimate>
+rectangle "DB" #LightGray{
+    archimate #APPLICATION "PostgreSQL" as db 
+    archimate #APPLICATION "pgMonitor \n exporters" as pe 
+}
+rectangle "DB1" #LightGray{
+    archimate #APPLICATION "PostgreSQL" as db3 
+    archimate #APPLICATION "pgMonitor \n exporters" as pe3 
+}
+rectangle "DB2" #LightGray{
+    archimate #APPLICATION "PostgreSQL" as db1
+    archimate #APPLICATION "pgMonitor \n exporters" as pe1 
+}
+rectangle "DB3" #LightGray{
+    archimate #APPLICATION "PostgreSQL" as db2
+    archimate #APPLICATION "pgMonitor \n exporters" as pe2
+}
+component "prometheus" as p #Yellow
+component "Grafana"  as g#LightGreen
+component "Altmanager" as a #LightGreen
+
+DB ---> p
+DB1 --->p
+DB2 --->p
+DB3 --->p
+
+p--->g
+p<----g
+p---->a
+
+@enduml

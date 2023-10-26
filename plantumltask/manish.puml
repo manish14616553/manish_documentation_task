@@ -1,0 +1,25 @@
+@startuml
+actor "user" as u #LightSlateGray
+rectangle "Keycloak" as K #Blue
+rectangle "google cloud" as gc #Yellow
+database "database" as D #Yellow
+rectangle " " as g 
+rectangle " " as i 
+rectangle " " as o
+rectangle " " as tt
+rectangle " " as yy
+rectangle " " as ff 
+rectangle " " as ll
+rectangle " " as hu
+u--->K  :[User Authenticate and \n redirect to keyclock] \n \n:[user hit in browser \n http://localhost:8080]
+K -right->gc : [Redirect to \n login]
+K <-down-g
+g-right----i
+i-right-o
+o-right-tt
+tt-right-yy
+yy-right-ff
+ff-right-ll :[User Authenticate successfully \n via google and also \n created in keyclock]   \n \n : [(User Provide Details)]
+ll-right-hu
+hu-up-D
+@enduml

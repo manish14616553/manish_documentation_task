@@ -1,0 +1,155 @@
+@startuml
+
+' !include <archimate/Archimate>
+' Application_Service(AS, "VARNISH \n NGINIX"  )  
+
+
+actor "user" as uu #Yellow
+rectangle "Isro gov.in" as I #Blue
+rectangle "Public IP (164.100.49.3)" as IP #LightBlue
+rectangle "NIC LB" as NIC #Yellow
+' rectangle "My gov Nginx LB" as my
+' rectangle "Nginx With RID Rule \n 82.175-179"
+' rectangle "Nginx With RID Rule \n 83.20-96"
+rectangle "Nginx With RID Rule \n 10.249.82.175" as NG #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.176" as NG1 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.177" as NG2 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.178" as NG3 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.179" as NG4 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.12" as NG5 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG6 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG7 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG8 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG9 #LightPink
+rectangle " " as P #Black
+rectangle " " as 1 #Black
+rectangle " " as 2 #Black
+rectangle " " as 3 #Black
+rectangle " " as 4 #Black
+rectangle " " as 5 #Black
+rectangle " " as 6 #Black
+rectangle " " as 7 #Black
+rectangle " " as 8 
+rectangle " " as 9 #Black
+rectangle " " as 10 
+rectangle " " as 11 #Black
+rectangle " " as 12 #Black
+
+
+
+
+
+
+
+
+
+uu-right-I
+I-down-IP :[DNS]
+IP-down-NIC
+
+NIC-down-P
+P-left-1
+1-left-2
+P-right-3
+3-right-4
+4-right-5
+1-down-NG
+2-down-NG1
+3-down-NG2
+4-down-NG3
+5-down-NG4
+2-left-6
+6-left-7
+7-left-8
+8-left-11
+10-right-12
+5-right-9
+9-right-10
+6-down-NG5
+7-down-NG6
+11-down-NG7
+9-down-NG8
+12-down-NG9
+
+rectangle " " as a 
+rectangle " " as b 
+rectangle " " as c 
+rectangle " " as d 
+rectangle " " as e 
+rectangle " " as f 
+rectangle " " as g 
+rectangle " " as h 
+rectangle " " as i 
+rectangle " " as j 
+rectangle "k" as k 
+rectangle "l" as l 
+rectangle "m" as m 
+rectangle "n" as n 
+rectangle "o" as o 
+rectangle "p" as p 
+rectangle "q" as q 
+rectangle "r" as r 
+rectangle "s" as s 
+rectangle "t" as t 
+rectangle "u" as u 
+rectangle "v" as v 
+rectangle "w" as w 
+rectangle "x" as x
+rectangle "y" as y
+
+NG--a
+NG1--b
+NG2--c
+NG3--d
+NG4--e
+NG5--f
+NG6--g
+NG7--h
+NG8--i
+NG9--j
+
+
+a-left-b
+b-left-f
+f-left-g
+a-right-c
+c-right-d
+d-right-e
+g-left-h
+e-right-i
+i-right-j
+
+
+
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qw #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qe #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qr #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qt #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qy #LightBlue
+
+k-right-l
+l-right-m
+m-right-n
+n-right-o
+o-right-p
+
+m-down-qw
+l-down-qe
+k-down-qr
+o-down-qt
+p-down-qy
+
+qw-down-q
+qe-down-r
+qr-down-s
+qt-down-t
+qy-down-u
+
+
+q-left-r
+r-left-s
+q-right-t
+t-right-u
+
+
+@enduml

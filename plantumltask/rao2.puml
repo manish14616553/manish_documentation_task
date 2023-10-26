@@ -1,0 +1,32 @@
+@startuml
+
+cloud "Cloud" as C #LightBlue 
+rectangle "<img:download (2).png>" as Server1 #Blue
+    rectangle "Server (MiniO)" as Server2 #Blue
+    rectangle "Server (MiniO)" as Server3 #Blue
+    
+
+rectangle "NVMe Storage" as NVMe #Blue
+rectangle "NVMe Storage" as NVMe1 #Blue
+rectangle "NVMe Storage" as NVMe2 #Blue
+
+
+rectangle "Client" as Client1 #LightBlue
+rectangle "Client" as Client2 #LightBlue
+rectangle "Client" as Client3 #LightBlue
+
+C -- Server1
+C -- Server2
+C-- Server3
+
+
+Server1 -- NVMe 
+Server2 -- NVMe1
+Server3 -- NVMe2
+
+
+Client1 ---C
+Client2 ---C
+Client3 ---C
+
+@enduml

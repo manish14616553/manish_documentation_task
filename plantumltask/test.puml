@@ -1,0 +1,31 @@
+@startuml
+!theme materia
+database "PostgreSQL" as db1 
+database "PostgreSQL " as db2
+database "PostgreSQL " as db3
+database "PostgreSQL " as db4
+
+rectangle "Prometheus" as prometheus
+
+component "pgMonitor Exporter" as exporter1
+component "pgMonitor Exporter" as exporter2
+component "pgMonitor Exporter" as exporter3
+component "pgMonitor Exporter" as exporter4
+
+rectangle "alertmanager" as altmanager
+rectangle "Grafana" as grafana
+
+db1 --> exporter1
+db2 --> exporter2
+db3 --> exporter3
+db4 --> exporter4
+
+exporter1 ----> prometheus
+exporter2 ----> prometheus
+exporter3 ----> prometheus
+exporter4 ----> prometheus
+
+prometheus ---> altmanager
+prometheus ---> grafana
+grafana ---> prometheus
+@enduml

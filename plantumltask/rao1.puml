@@ -1,0 +1,68 @@
+@startuml
+archimate #Technology "Router" as R <<technology-device>>
+archimate #Technology "DHCP server" as S <<technology-device>>
+archimate #Technology "DNS server" as D <<technology-device>>
+package "Internet access" as In
+R-up--In
+S-left-R
+package "Baremetal Network" as B #White{
+}
+archimate #Technology "API VIP" as A <<technology-device>>
+archimate #Technology "DNS VIP" as N <<technology-device>>
+archimate #Technology "Ingress" as G <<technology-device>>
+rectangle "[]" as c #Yellow
+rectangle "." as k 
+rectangle "[]" as z #Yellow
+node "Provisioning node" as P #LightGreen{
+  rectangle "[eno2 Baremetal bridge] \n \n [Bootstrap VM] \n \n[eno1 Provisioning bridge]" as e #LightSkyBlue
+}
+node "Master node x3" as x #LightGreen{
+  rectangle "Master node \n \n \n \n " #LightSkyBlue
+}
+node "Worker nodes xN" as v #LightGreen{
+  rectangle "Worker nodes xN \n \n \n \n " as o #LightSkyBlue
+}
+archimate #Technology "Router1" as R1 <<technology-device>>
+rectangle " " as t 
+rectangle " " as u 
+rectangle " " as i 
+rectangle " " as mm
+rectangle " " as kk 
+rectangle "[]" as df #Yellow
+rectangle " " as gh #Yellow
+rectangle " " as sd 
+rectangle "[]" as kl #Yellow
+' rectangle " " as hy #Yellow
+    sd-left-kl
+    gh-left-sd
+    P-down-gh
+    u-left-gh
+    kk-right--df
+    mm---right---kk 
+    i-right-mm
+    v--mm
+    t-right-i
+    x-down-i
+    u-right-t
+    c--right--B
+    G-right--k
+    x-right-v
+    D-right-.>v
+    R1-right-.>v
+    G-down-.>v
+    A-down-.>x
+    N-down-.>x
+    B-down-.>P
+    R---k
+    k-right---z
+    B-right-A
+    A-right-N
+    N-right-G
+@enduml
+
+
+
+
+
+
+

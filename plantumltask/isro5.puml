@@ -1,0 +1,459 @@
+@startuml
+
+' !theme aws-orange
+
+actor "user" as uu #Yellow
+rectangle "Isroquiz.mygov.in" as I #LightBlue
+rectangle "Public IP (164.100.49.3)" as IP #LightBlue
+rectangle "NIC LB" as NIC #Yellow
+
+rectangle "Nginx With RID Rule \n 10.249.82.175" as NG #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.176" as NG1 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.177" as NG2 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.178" as NG3 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.82.179" as NG4 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.12" as NG5 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG6 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG7 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG8 #LightPink
+rectangle "Nginx With RID Rule \n 10.249.83.175" as NG9 #LightPink
+
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qw #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qe #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qr #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qt #LightBlue
+rectangle "VARNISH \n NGINX \n \n [IP-10.249.82.170-174]" as qy #LightBlue
+
+rectangle " " as a #Black
+rectangle " " as b #Black
+rectangle " " as d #Black
+rectangle " " as e #Black
+rectangle " " as f #Black
+rectangle " " as g #Black
+rectangle " " as h #Black
+rectangle " " as i #Black
+rectangle " " as j #Black
+rectangle " " as k #Black
+rectangle " " as l #Black
+rectangle " " as m #Black
+rectangle " " as n #Black
+rectangle " " as o #Black
+rectangle " " as p #Black
+rectangle " " as q #Black
+rectangle " " as r #Black
+rectangle " " as s #Black
+rectangle " " as t #Black
+rectangle " " as u #Black
+rectangle " " as v #Black
+
+
+
+uu-right-I
+I-down-IP :[DNS]
+IP-down-NIC
+NIC-down-d
+
+
+a-right-b
+b-right-d
+d-right-e
+e-right-f
+
+a-down-qw
+b-down-qe
+d-down-qr
+e-down-qt
+f-down-qy
+
+qw-down-g
+qe-down-h
+qr-down-i
+qt-down-j
+qy-down-k
+
+g-right-h
+h-right-i
+i-right-j
+j-right-k
+
+rectangle "Isroquiz.mygov.in" as ii #LightGreen
+rectangle "Public IP (164.100.49.3)" as ip 
+rectangle "NIC LB" as nic #Yellow
+rectangle "MY gov Nginx LB" as nic1 #Yellow
+
+i-down-ii
+ii-down-ip
+ip-down-nic
+nic-down-nic1
+
+l-right-m
+m-right-n
+n-right-o
+o-right-p
+p-right-q
+q-right-r
+r-right-s
+s-right-t
+t-right-u
+u-right-v
+
+p-down-NG
+o-down-NG1
+n-down-NG2
+m-down-NG3
+l-down-NG4
+r-down-NG5
+s-down-NG6
+t-down-NG7
+u-down-NG8
+v-down-NG9
+
+nic1-down-q
+
+
+rectangle " " as a1 #Black
+rectangle " " as b2 #Black
+rectangle " " as c3 #Black
+rectangle " " as d4 #Black
+rectangle " " as e5 #Black
+rectangle " " as f6  #Black
+rectangle " " as g7 #Black
+rectangle " " as h8 #Black
+rectangle " " as i9 #Black
+rectangle " " as j10 #Black
+rectangle " " as y25 #Black
+
+
+a1-right-y25
+NG-down--a1
+NG1-down-b2
+NG2-down--c3
+NG3-down--d4
+NG4-down--e5
+NG5-down--f6
+NG6-down--g7
+NG7-down--h8
+NG8-down--i9
+NG9-down--j10
+
+y25-right-f6
+f6-right-g7
+g7-right-h8
+h8-right-i9
+i9-right-j10
+
+a1-left-b2
+b2-left-c3
+c3-left-d4
+d4-left-e5
+
+
+
+rectangle " " as aa1#Black
+rectangle " " as bb1#Black
+rectangle " " as cc1#Black
+rectangle " " as dd1#Black
+rectangle " " as ee1#Black
+rectangle " " as ff1#Black
+rectangle " " as gg1#Black
+rectangle " " as hh1#Black
+rectangle " " as ii1#Black
+rectangle " " as jj1#Black
+rectangle " " as kk1 #Black
+rectangle " " as ll1#Black
+rectangle " " as mm1#Black
+rectangle " " as nn1 #Black
+rectangle " " as oo1 #Black
+rectangle " " as pp1 #Black
+rectangle " " as qq1#Black
+rectangle " " as rr1 #Black
+rectangle " " as ss1 #Black
+rectangle " " as tt1 #Black
+rectangle " " as uu1 #Black
+rectangle " " as vv1#Black
+rectangle " " as ww1#Black
+rectangle " " as xx1#Black
+rectangle " " as yy1#Black
+rectangle " " as zz1#Black
+
+zz1-right-aa1
+zz1-left-bb1
+bb1-left-cc1
+cc1-left-dd1
+dd1-left-ee1
+ee1-left-ff1
+ff1-left-gg1
+gg1-left-hh1
+hh1-left-ii1
+ii1-left-jj1
+jj1-left-kk1
+kk1-left-ll1
+ll1-left-mm1
+
+aa1-right-nn1
+nn1-right-oo1
+oo1-right-pp1
+pp1-right-qq1
+qq1-right-rr1
+rr1-right-ss1
+ss1-right-tt1
+tt1-right-uu1
+uu1-right-vv1
+vv1-right-ww1
+ww1-right-xx1
+xx1-right-yy1
+
+
+y25-down-zz1
+
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N1 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N2 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N3 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N4 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N5 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N6 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N7 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N8 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N9 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N10 #SkyBlue
+
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N11 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N12 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N13 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N14 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N15 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N16 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N17 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N18 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N19 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N20 #SkyBlue
+
+
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N21 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N22 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N23 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N24 #SkyBlue
+rectangle "Varnish \n Nginx \n PHP-FPM \n Redis \n Maria DB \n \n [IP-10.249.82.180-199]" as N25 #SkyBlue
+
+aa1-down-N1
+bb1-down-N2
+cc1-down-N3
+dd1-down-N4
+ee1-down-N5
+ff1-down-N6
+gg1-down-N7
+hh1-down-N8
+ii1-down-N9
+jj1-down-N10
+kk1-down-N11
+ll1-down-N12
+nn1-down-N13
+mm1-down-N14
+oo1-down-N15
+pp1-down-N16
+qq1-down-N17
+rr1-down-N18
+ss1-down-N19
+tt1-down-N20
+uu1-down-N21
+vv1-down-N22
+ww1-down-N23
+xx1-down-N24
+yy1-down-N25
+
+rectangle " " as aaa1 #Black
+rectangle " " as bbb1 #Black
+rectangle " " as ccc1 #Black
+rectangle " " as ddd1 #Black
+rectangle " " as eee1#Black
+rectangle " " as fff1#Black
+rectangle " " as ggg1#Black
+rectangle " " as hhh1#Black
+rectangle " " as iii1#Black
+rectangle " " as jjj1#Black
+rectangle " " as kkk1#Black
+rectangle " " as lll1#Black
+rectangle " " as mmm1#Black
+rectangle " " as nnn1 #Black
+rectangle " " as ooo1 #Black
+rectangle " " as ppp1 #Black
+rectangle " " as qqq1#Black
+rectangle " " as rrr1 #Black
+rectangle " " as sss1 #Black
+rectangle " " as ttt1 #Black
+rectangle " " as uuu1 #Black
+rectangle " " as vvv1#Black
+rectangle " " as www1#Black
+rectangle " " as xxx1#Black
+rectangle " " as yyy1#Black
+' rectangle "z" as zzz1
+' rectangle "mm" as tut
+
+
+N1-down-aaa1
+N2-down-bbb1
+N3-down-ccc1
+N4-down-ddd1
+N5-down-eee1
+N6-down-fff1
+N7-down-ggg1
+N8-down-hhh1
+N9-down-iii1
+N10-down-jjj1
+N11-down-kkk1
+N12-down-lll1
+N13-down-nnn1
+N14-down-mmm1
+N15-down-ooo1
+N16-down-ppp1
+N17-down-qqq1
+N18-down-rrr1
+N19-down-sss1
+N20-down-ttt1
+N21-down-uuu1
+N22-down-vvv1
+N23-down-www1
+N24-down-xxx1
+N25-down-yyy1
+
+
+mmm1-right-lll1
+lll1-right-kkk1
+kkk1-right-jjj1
+jjj1-right-iii1
+iii1-right-hhh1
+hhh1-right-ggg1
+ggg1-right-fff1
+fff1-right-eee1
+eee1-right-ddd1
+ddd1-right-ccc1
+ccc1-right-bbb1
+aaa1-right-nnn1
+nnn1-right-ooo1
+ooo1-right-ppp1
+ppp1-right-qqq1
+qqq1-right-rrr1
+rrr1-right-sss1
+sss1-right-ttt1
+ttt1-right-uuu1
+uuu1-right-vvv1
+vvv1-right-www1
+www1-right-xxx1
+xxx1-right-yyy1
+aaa1-left-bbb1
+
+
+rectangle " " as qwe #SkyBlue {
+    component "PHP Code for 25 DB" as Dd
+    rectangle "R/W" as rw
+    component "Slave of Azure DB Slave" as Az
+    rectangle "[IP-100.249.82.200]"
+
+    Dd-down->Az
+}
+
+bbb1---->qwe
+aaa1---->qwe
+ccc1---->qwe
+ddd1---->qwe
+eee1---->qwe
+fff1---->qwe
+ggg1---->qwe
+hhh1----->qwe
+iii1------>qwe
+jjj1------>qwe
+kkk1------>qwe
+lll1------>qwe
+mmm1----->qwe
+nnn1------>qwe
+ooo1------>qwe
+ppp1------>qwe
+qqq1------>qwe
+rrr1------>qwe
+sss1------>qwe
+ttt1------>qwe
+uuu1------>qwe
+vvv1------>qwe
+www1------>qwe
+xxx1------>qwe
+yyy1------>qwe
+
+
+' rectangle "mm" as tut1
+' rectangle "mm2" as tut2
+' rectangle "mm3" as tut3
+' rectangle "mm4" as tut4
+' rectangle "mm5" as tut5
+' rectangle "mm6" as tut6
+
+' tut4-right-----tut6
+
+' kkk1---tut4
+' tut1---tut2
+' tut3----tut3
+' tut4----tut2
+
+' aaa1---tut1
+' bbb1---tut2
+' nnn1---tut3
+' ccc1--tut2
+' ddd1---tut2
+' eee1---tut2
+' fff1---tut2
+' ggg1----tut2
+' hhh1----tut2
+' iii1----tut2
+' jjj1----tut2
+' lll1-----tut4
+' mmm1------tut4
+
+' ooo1---tut3
+' ppp1---tut3
+' qqq1---tut3
+
+' rrr1---tut3
+' sss1---tut3
+' ttt1----tut3
+' uuu1----tut3
+' vvv1----tut3
+' www1----tut3
+' xxx1-----tut3
+' yyy1------tut3
+
+' vvv1-----tut6
+' www1-----tut6
+' xxx1-----tut6
+' yyy1-----tut6
+
+
+' tut1-down----qwe
+' tut2-----qwe
+' tut3------qwe
+' tut4------qwe
+' tut6--------qwe
+
+
+
+rectangle "Cluster" as cs #LightGray{
+    component "Elastic Search \n \n [IP-10.249.82.55]" as es  #SkyBlue
+    component "Elastic Search \n \n [IP-10.249.82.56]" as es1 #SkyBlue
+    component "Elastic Search \n \n [IP-10.249.82.57]" as es2 #SkyBlue
+}
+
+qwe---right---->cs :[R/W]
+
+component "DB / Azure Slave  \n \n [IP-10248.155.3306]" as Ddb #SkyBlue
+qwe---->Ddb :[Replication]
+
+component "Azure Cloud" as ac #SkyBlue
+Ddb-left-ac :[Hourly Backup $ Restore on \n Azure Slave]
+
+
+
+
+
+
+
+
+
+@enduml

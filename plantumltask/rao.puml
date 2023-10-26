@@ -1,0 +1,49 @@
+@startuml
+
+!define RECTANGLE class
+!define END package
+
+package "Internet" {
+    RECTANGLE "Internet Access"
+}
+
+package "Baremetal Network" {
+    RECTANGLE "API"
+    RECTANGLE "VIP"
+    RECTANGLE "DNS"
+    RECTANGLE "VIP"
+    RECTANGLE "Ingress"
+    RECTANGLE "VIP"
+}
+
+package "Router" {
+    RECTANGLE "Router"
+    RECTANGLE "DHCP Server"
+}
+
+package "Cluster" {
+    RECTANGLE "Master Node x3"
+    RECTANGLE "Worker Nodes XN"
+    RECTANGLE "Bootstrap VM"
+}
+
+package "Provisioning Network" {
+    RECTANGLE "Provisioning Node"
+}
+
+Internet Access --> Router : Internet Access
+Router --> "Baremetal Network" : Connects to
+Router --> "DHCP Server" : Connects to
+"Baremetal Network" --> API
+"Baremetal Network" --> VIP
+"Baremetal Network" --> DNS
+"Baremetal Network" --> VIP
+"Baremetal Network" --> Ingress
+"Baremetal Network" --> VIP
+"Baremetal Network" --> Router : Connects to
+"Baremetal Network" --> "Provisioning Node"
+"Provisioning Node" --> "Master Node x3"
+"Provisioning Node" --> "Worker Nodes XN"
+"Provisioning Node" --> "Bootstrap VM"
+
+@enduml

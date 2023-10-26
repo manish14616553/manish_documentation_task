@@ -1,0 +1,22 @@
+@startuml
+rectangle Router #LightGreen
+node "K8s Cluster" as k #LightGrey{
+    rectangle "MetalLB LoadBalancer \n Service \n \n [IP-ADDR1]" as R #LightBlue
+    rectangle "MetalLB LoadBalancer \n Service \n \n [IP-ADDR2]" as R1 #LightBlue
+    rectangle "MetalLB LoadBalancer \n Service \n \n [IP-ADDR3]" as R2 #LightBlue
+
+    [Deployment 1] #LightBlue
+    [Deployment 2] #LightBlue
+    [Deployment 3] #LightBlue
+
+    R --->  [Deployment 1]
+    R1 ---> [Deployment 2]
+    R2 ---> [Deployment 3]
+}
+Router -----k
+k ---R
+k --R1
+k ---R2
+@enduml
+
+

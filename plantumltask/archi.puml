@@ -1,0 +1,54 @@
+@startuml
+!define NODE_TOP_PADDING 20
+!define NODE_BOTTOM_PADDING 20
+!define DB_WIDTH 200
+!define DB_HEIGHT 120
+!define EXPORTER_WIDTH 140
+!define EXPORTER_HEIGHT 70
+!define PROMETHEUS_WIDTH 180
+!define PROMETHEUS_HEIGHT 90
+!define GRAFANA_ALERT_WIDTH 220
+!define GRAFANA_ALERT_HEIGHT 70
+
+node "Database 1" as DB1 <<Database>> {
+    database "PostgreSQL" as db1 #LightBlue
+    rectangle "pgMonitor\nExporter" as Exporter1 #LightBlue
+}
+node "Database 2" as DB2 <<Database>> {
+    database "PostgreSQL" as db2 #LightBlue
+    rectangle "pgMonitor\nExporter" as Exporter2 <<Software>> #LightBlue
+}
+node "Database 3" as DB3 <<Database>> {
+    database "PostgreSQL" as db3 #LightBlue
+    rectangle "pgMonitor\nExporter" as Exporter3 #LightBlue
+}
+node "Database 4" as DB4 <<Database>> {
+    database "PostgreSQL" as db4 #LightBlue
+    rectangle "pgMonitor\nExporter" as Exporter4 #LightBlue
+}
+
+node "Prometheus" as Prometheus #Yellow {
+'     rectangle "Alertmanager" as Alertmanager <<Software>> #LightGreen
+'     rectangle "Grafana" as Grafana <<Software>> #LightGreen
+ }
+
+ 
+
+
+DB1 -[hidden]-> Exporter1
+DB2 -[hidden]-> Exporter2
+DB3 -[hidden]-> Exporter3
+DB4 -[hidden]-> Exporter4
+
+DB1-down-> Prometheus : Triggers
+DB2 -down-> Prometheus : Triggers
+DB3 -down--> Prometheus : Triggers
+DB4 -down--> Prometheus : Triggers
+
+Prometheus -down-> Grafana : Sends Data
+Prometheus <-down- Grafana : Sends Data
+Prometheus -down-> Alertmanager : Sends Alerts
+
+@enduml
+
+
